@@ -143,3 +143,182 @@ function impact_faktory_auto_setup_pages() {
     }
 }
 add_action( 'after_switch_theme', 'impact_faktory_auto_setup_pages' );
+
+/**
+ * Helper function to generate the custom pixel-bitmap logo SVG
+ */
+function get_pixel_logo_svg() {
+    $letters = array(
+        'I' => array(
+            array(1,1,1,1,1),
+            array(0,0,1,0,0),
+            array(0,0,1,0,0),
+            array(0,0,1,0,0),
+            array(0,0,1,0,0),
+            array(0,0,1,0,0),
+            array(0,0,1,0,0),
+            array(0,0,1,0,0),
+            array(1,1,1,1,1)
+        ),
+        'M' => array(
+            array(1,0,0,0,1),
+            array(1,1,0,1,1),
+            array(1,1,0,1,1),
+            array(1,0,1,0,1),
+            array(1,0,1,0,1),
+            array(1,0,0,0,1),
+            array(1,0,0,0,1),
+            array(1,0,0,0,1),
+            array(1,0,0,0,1)
+        ),
+        'P' => array(
+            array(1,1,1,1,0),
+            array(1,0,0,0,1),
+            array(1,0,0,0,1),
+            array(1,0,0,0,1),
+            array(1,1,1,1,0),
+            array(1,0,0,0,0),
+            array(1,0,0,0,0),
+            array(1,0,0,0,0),
+            array(1,0,0,0,0)
+        ),
+        'A' => array(
+            array(0,1,1,1,0),
+            array(1,0,0,0,1),
+            array(1,0,0,0,1),
+            array(1,0,0,0,1),
+            array(1,1,1,1,1),
+            array(1,0,0,0,1),
+            array(1,0,0,0,1),
+            array(1,0,0,0,1),
+            array(1,0,0,0,1)
+        ),
+        'C' => array(
+            array(0,1,1,1,1),
+            array(1,0,0,0,0),
+            array(1,0,0,0,0),
+            array(1,0,0,0,0),
+            array(1,0,0,0,0),
+            array(1,0,0,0,0),
+            array(1,0,0,0,0),
+            array(1,0,0,0,0),
+            array(0,1,1,1,1)
+        ),
+        'T' => array(
+            array(1,1,1,1,1),
+            array(0,0,1,0,0),
+            array(0,0,1,0,0),
+            array(0,0,1,0,0),
+            array(0,0,1,0,0),
+            array(0,0,1,0,0),
+            array(0,0,1,0,0),
+            array(0,0,1,0,0),
+            array(0,0,1,0,0)
+        ),
+        'F' => array(
+            array(1,1,1,1,1),
+            array(1,0,0,0,0),
+            array(1,0,0,0,0),
+            array(1,0,0,0,0),
+            array(1,1,1,1,0),
+            array(1,0,0,0,0),
+            array(1,0,0,0,0),
+            array(1,0,0,0,0),
+            array(1,0,0,0,0)
+        ),
+        'K' => array(
+            array(1,0,0,0,1),
+            array(1,0,0,1,0),
+            array(1,0,1,0,0),
+            array(1,1,0,0,0),
+            array(1,1,0,0,0),
+            array(1,0,1,0,0),
+            array(1,0,0,1,0),
+            array(1,0,0,0,1),
+            array(1,0,0,0,1)
+        ),
+        'O' => array(
+            array(0,1,1,1,0),
+            array(1,0,0,0,1),
+            array(1,0,0,0,1),
+            array(1,0,0,0,1),
+            array(1,0,0,0,1),
+            array(1,0,0,0,1),
+            array(1,0,0,0,1),
+            array(1,0,0,0,1),
+            array(0,1,1,1,0)
+        ),
+        'R' => array(
+            array(1,1,1,1,0),
+            array(1,0,0,0,1),
+            array(1,0,0,0,1),
+            array(1,0,0,0,1),
+            array(1,1,1,1,0),
+            array(1,0,1,0,0),
+            array(1,0,0,1,0),
+            array(1,0,0,0,1),
+            array(1,0,0,0,1)
+        ),
+        'Y' => array(
+            array(1,0,0,0,1),
+            array(1,0,0,0,1),
+            array(0,1,0,1,0),
+            array(0,1,0,1,0),
+            array(0,0,1,0,0),
+            array(0,0,1,0,0),
+            array(0,0,1,0,0),
+            array(0,0,1,0,0),
+            array(0,0,1,0,0)
+        )
+    );
+
+    $word1 = array('I', 'M', 'P', 'A', 'C', 'T');
+    $word2 = array('F', 'A', 'K', 'T', 'O', 'R', 'Y');
+
+    $svg = '<svg viewBox="0 0 80 9" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">';
+    $svg .= '<defs>';
+    $svg .= '<linearGradient id="logo-grad" x1="0%" y1="100%" x2="100%" y2="0%">';
+    $svg .= '<stop offset="0%" stop-color="var(--text)" />';
+    $svg .= '<stop offset="55%" stop-color="var(--text)" />';
+    $svg .= '<stop offset="78%" stop-color="#FFE600" />';
+    $svg .= '<stop offset="100%" stop-color="#FFE600" />';
+    $svg .= '</linearGradient>';
+    $svg .= '</defs>';
+    $svg .= '<g fill="url(#logo-grad)">';
+
+    // Render IMPACT
+    $xOffset = 0;
+    foreach ($word1 as $char) {
+        $matrix = $letters[$char];
+        for ($row = 0; $row < 9; $row++) {
+            for ($col = 0; $col < 5; $col++) {
+                if ($matrix[$row][$col] === 1) {
+                    $svg .= '<rect x="' . ($xOffset + $col) . '" y="' . $row . '" width="1" height="1" />';
+                }
+            }
+        }
+        $xOffset += 6;
+    }
+
+    // Space between words is 4px
+    $xOffset = 39;
+
+    // Render FAKTORY
+    foreach ($word2 as $char) {
+        $matrix = $letters[$char];
+        for ($row = 0; $row < 9; $row++) {
+            for ($col = 0; $col < 5; $col++) {
+                if ($matrix[$row][$col] === 1) {
+                    $svg .= '<rect x="' . ($xOffset + $col) . '" y="' . $row . '" width="1" height="1" />';
+                }
+            }
+        }
+        $xOffset += 6;
+    }
+
+    $svg .= '</g>';
+    $svg .= '</svg>';
+
+    return $svg;
+}
+
