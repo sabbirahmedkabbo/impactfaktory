@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impact Faktory — We Don't Follow the Market. We Disrupt It.</title>
+  <meta name="description" content="Impact Faktory is a disruptive marketing, advertising, and event activation agency that builds cultural landmarks and forces perception shifts." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://sabbirahmedkabbo.github.io/impactfaktory/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Impact Faktory — We Don't Follow the Market. We Disrupt It." />
+  <meta property="og:description" content="Disruptive marketing, advertising, and event activation agency." />
+  <meta property="og:url" content="https://sabbirahmedkabbo.github.io/impactfaktory/" />
+
+  <!-- Schema.org Organization Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Impact Faktory",
+    "url": "https://sabbirahmedkabbo.github.io/impactfaktory/",
+    "description": "Disruptive marketing, advertising, and event activation agency",
+    "logo": "https://sabbirahmedkabbo.github.io/impactfaktory/assets/logo.svg"
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+
+  <!-- Animated background canvas -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <nav class="nav-inner" role="navigation" aria-label="Primary navigation">
+      <a href="index.html" class="nav-logo" aria-label="Impact Faktory — Home">
+        <svg id="wordmark" viewBox="0 0 152 18" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" aria-label="IMPACT FAKTORY"></svg>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" class="nav-link active" id="nav-home">Home</a></li>
+        <li><a href="about.html" class="nav-link" id="nav-about">About</a></li>
+        <li><a href="services.html" class="nav-link" id="nav-services">Services</a></li>
+        <li><a href="work.html" class="nav-link" id="nav-work">Work</a></li>
+        <li><a href="contact.html" class="nav-link" id="nav-contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode" aria-pressed="false">
+        <span class="toggle-track" aria-hidden="true"><span class="toggle-thumb"></span></span>
+      </button>
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <!-- Mobile nav -->
+    <div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Mobile navigation">
+      <ul role="list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="work.html" class="nav-link">Work</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HOME PAGE -->
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero-wordmark" id="hero-wordmark-wrap" aria-label="IMPACT FAKTORY"></div>
+        <h1 class="hero-headline" id="hero-heading">
+          We don't follow<br>the market.<br>We disrupt it.
+        </h1>
+        <p class="hero-sub">
+          <span class="yellow-underline">Disruptive marketing, advertising &amp; event activation</span><br>
+          engineered to make brands unforgettable.
+        </p>
+        <div class="hero-ctas">
+          <a href="contact.html" class="btn btn-fill" id="hero-cta-primary">Let's Disrupt Something</a>
+          <a href="work.html" class="btn btn-outline" id="hero-cta-secondary">See Our Work</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES GRID -->
+    <section class="section services-section" aria-labelledby="services-heading">
+      <div class="container">
+        <h2 class="section-title" id="services-heading">Core <span class="yellow-underline">Capabilities</span></h2>
+        <div class="cards-grid">
+          <article class="card card-filled" id="card-marketing">
+            <span class="card-num" aria-hidden="true">01</span>
+            <h3 class="card-title">Marketing &amp;<br>Advertising</h3>
+            <p class="card-body">Disruptive campaigns that grab market share, hijack attention, and drive measurable growth.</p>
+            <a href="services.html#marketing" class="card-link">Explore →</a>
+          </article>
+          <article class="card card-outline" id="card-events">
+            <span class="card-num" aria-hidden="true">02</span>
+            <h3 class="card-title">Event<br>Activation</h3>
+            <p class="card-body">Immersive live experiences that turn passive spectators into die-hard brand advocates.</p>
+            <a href="services.html#events" class="card-link">Explore →</a>
+          </article>
+          <article class="card card-filled" id="card-identity">
+            <span class="card-num" aria-hidden="true">03</span>
+            <h3 class="card-title">Brand Identity<br>&amp; Narrative</h3>
+            <p class="card-body">Uncompromising visual systems and positioning strategies that command authority.</p>
+            <a href="services.html#identity" class="card-link">Explore →</a>
+          </article>
+          <article class="card card-outline" id="card-perception">
+            <span class="card-num" aria-hidden="true">04</span>
+            <h3 class="card-title">Perception<br>Shift</h3>
+            <p class="card-body">Strategic campaigns that reshape consumer beliefs and redefine brand narratives.</p>
+            <a href="services.html#perception" class="card-link">Explore →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE TICKER -->
+    <div class="ticker-wrap" aria-hidden="true">
+      <div class="ticker-track">
+        <span>DISRUPT</span><span class="dot">■</span>
+        <span>ACTIVATE</span><span class="dot">■</span>
+        <span>IMPACT</span><span class="dot">■</span>
+        <span>SHIFT PERCEPTION</span><span class="dot">■</span>
+        <span>BUILD LEGACY</span><span class="dot">■</span>
+        <span>DOMINATE</span><span class="dot">■</span>
+        <span>DISRUPT</span><span class="dot">■</span>
+        <span>ACTIVATE</span><span class="dot">■</span>
+        <span>IMPACT</span><span class="dot">■</span>
+        <span>SHIFT PERCEPTION</span><span class="dot">■</span>
+        <span>BUILD LEGACY</span><span class="dot">■</span>
+        <span>DOMINATE</span><span class="dot">■</span>
+      </div>
+    </div>
+
+    <!-- STAT STRIP -->
+    <section class="section stats-section" aria-label="Agency statistics">
+      <div class="container stats-grid">
+        <div class="stat-item">
+          <span class="stat-num">240<span class="stat-accent">%</span></span>
+          <span class="stat-label">Average Brand Reach Increase</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">4.2<span class="stat-accent">M</span></span>
+          <span class="stat-label">Social Impressions Generated</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">12<span class="stat-accent">K+</span></span>
+          <span class="stat-label">Live Event Participants</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">60<span class="stat-accent">%</span></span>
+          <span class="stat-label">Average Lead Growth for Clients</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <a href="index.html" class="footer-logo" aria-label="Impact Faktory">
+        <svg id="footer-wordmark" viewBox="0 0 152 18" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges"></svg>
+      </a>
+      <p class="footer-copy">© <span id="year"></span> Impact Faktory. All rights reserved.</p>
+      <ul class="footer-links" role="list">
+        <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a></li>
+        <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LI</a></li>
+        <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X">X</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="assets/js/logo.js"></script>
+  <script src="assets/js/bg.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
