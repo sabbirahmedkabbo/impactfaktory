@@ -71,18 +71,31 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   overflow: hidden;
   pointer-events: none;
   background-size: 400% 400%;
-  animation: bg-gradient 20s ease infinite;
-  transition: background var(--speed) var(--ease);
+  animation: bg-gradient 25s ease infinite;
 }
 
-/* Light mode shifting gradient colors (subtle off-whites and brand gold-hints) */
+/* Light mode — warm ivory → soft peach → pale lavender → cool mint → back */
 [data-theme="light"] .ambient-bg {
-  background-image: linear-gradient(-45deg, #FFFFFF, #FFFCF2, #FFFDF7, #FFF8E7);
+  background-image: linear-gradient(
+    -45deg,
+    #FFFDF5,
+    #FFF0E0,
+    #F5ECFF,
+    #E8F8F5,
+    #FFFDF5
+  );
 }
 
-/* Dark mode shifting gradient colors (subtle deep blacks and dark brand amber/indigo hints) */
+/* Dark mode — deep charcoal → warm ember → cool indigo → teal shadow → back */
 [data-theme="dark"] .ambient-bg {
-  background-image: linear-gradient(-45deg, #0A0A0A, #12110c, #0b0c10, #0a0a0f);
+  background-image: linear-gradient(
+    -45deg,
+    #0A0A0A,
+    #1A1208,
+    #0C0A1A,
+    #081614,
+    #0A0A0A
+  );
 }
 
 .cube {
