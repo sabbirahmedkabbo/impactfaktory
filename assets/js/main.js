@@ -38,12 +38,7 @@ function applyTheme(dark) {
   document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
   const btn = document.getElementById('theme-toggle');
   if (btn) btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
-
-  // Update nav logo mark dark squares
-  document.querySelectorAll('.nav-logo-mark .dark-sq').forEach(el => {
-    el.setAttribute('fill', dark ? '#FFFFFF' : '#0A0A0A');
-  });
-
+  // Logo dark-mode handled via CSS filter: invert(1) on [data-theme=dark] .nav-logo-mark
   window.dispatchEvent(new CustomEvent('themechanged', { detail: { dark } }));
 }
 
