@@ -9,3 +9,7 @@ ehthumbs.db
 
 # Backup configs
 wp-config.php.bak
+
+# Git sync tool
+sync-git.ps1
+
