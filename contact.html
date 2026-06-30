@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Impact Faktory</title>
+  <meta name="description" content="Get in touch with Impact Faktory to start your disruptive marketing campaign, event activation, or brand project." />
+  <link rel="canonical" href="https://sabbirahmedkabbo.github.io/impactfaktory/contact.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <script>
+    (function(){var s=localStorage.getItem('if-theme'),d=window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.setAttribute('data-theme',(s?s==='dark':d)?'dark':'light');})();
+  </script>
+</head>
+<body>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <nav class="nav-inner" role="navigation" aria-label="Primary navigation">
+      <a href="index.html" class="nav-logo"><svg id="wordmark" viewBox="0 0 304 18" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges"></svg></a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="work.html" class="nav-link">Work</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode"><span class="toggle-track" aria-hidden="true"><span class="toggle-thumb"></span></span></button>
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Mobile navigation">
+      <ul role="list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="work.html" class="nav-link">Work</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="page-banner">
+      <div class="container">
+        <p class="page-banner-label">Impact Faktory / Contact</p>
+        <h1 class="page-banner-title">Let's<br><span class="yellow-underline">Disrupt</span><br>Something</h1>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- Left: details -->
+          <div>
+            <p style="font-size:1.1rem; line-height:1.85; opacity:.88; max-width:420px;">
+              Ready to make your brand impossible to ignore? Tell us what you're working with — we'll tell you exactly how to blow it up.
+            </p>
+            <div class="contact-details">
+              <div>
+                <p class="contact-detail-label">Email</p>
+                <a href="mailto:hello@impactfaktory.com" class="contact-detail-val">hello@impactfaktory.com</a>
+              </div>
+              <div>
+                <p class="contact-detail-label">Phone</p>
+                <a href="tel:+10000000000" class="contact-detail-val">+1 (000) 000-0000</a>
+              </div>
+              <div>
+                <p class="contact-detail-label">Location</p>
+                <p class="contact-detail-val">Dhaka, Bangladesh</p>
+              </div>
+              <div>
+                <p class="contact-detail-label">Available</p>
+                <p class="contact-detail-val">Mon – Fri, 09:00 – 18:00 BST</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: form -->
+          <div>
+            <!--
+              CONNECT TO FORMSPREE:
+              1. Go to https://formspree.io and create a free account
+              2. Create a new form → copy your form ID (e.g. xpwzqjlk)
+              3. Replace action="#" below with action="https://formspree.io/f/YOUR_FORM_ID"
+              That's it — no backend, no database, no server required.
+            -->
+            <form
+              class="form"
+              id="contact-form"
+              action="#"
+              method="POST"
+              novalidate
+              aria-label="Contact form"
+            >
+              <div class="form-group">
+                <label class="form-label" for="cf-name">Your Name</label>
+                <input class="form-input" type="text" id="cf-name" name="name" required autocomplete="name" placeholder="Jane Smith" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cf-email">Email Address</label>
+                <input class="form-input" type="email" id="cf-email" name="email" required autocomplete="email" placeholder="jane@brand.com" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cf-company">Company / Brand</label>
+                <input class="form-input" type="text" id="cf-company" name="company" placeholder="Brand Name Ltd" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cf-service">Service Interested In</label>
+                <select class="form-input form-select" id="cf-service" name="service">
+                  <option value="">— Select a service —</option>
+                  <option value="marketing">Marketing &amp; Advertising</option>
+                  <option value="events">Event Activation</option>
+                  <option value="identity">Brand Identity &amp; Narrative</option>
+                  <option value="perception">Perception Shift</option>
+                  <option value="other">Other / Not Sure Yet</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cf-message">Tell Us About Your Project</label>
+                <textarea class="form-input" id="cf-message" name="message" required placeholder="What do you want to disrupt?" rows="5"></textarea>
+              </div>
+              <button type="submit" class="btn btn-fill" id="contact-submit" style="align-self:flex-start;">
+                Send Message →
+              </button>
+            </form>
+
+            <div class="form-success" id="form-success" role="alert" aria-live="polite">
+              ✓ Message received. We'll be in touch within 24 hours.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <a href="index.html" class="footer-logo"><svg id="footer-wordmark" viewBox="0 0 304 18" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges"></svg></a>
+      <p class="footer-copy">© <span id="year"></span> Impact Faktory. All rights reserved.</p>
+      <ul class="footer-links" role="list">
+        <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a></li>
+        <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LI</a></li>
+        <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">X</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="assets/js/logo.js"></script>
+  <script src="assets/js/bg.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
