@@ -711,6 +711,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .footer-copy { font-size: .78rem; opacity: .45; letter-spacing: .04em; }
 .footer-links { display: flex; gap: 1.5rem; }
 .footer-links a {
+  display: flex;
+  align-items: center;
   font-size: .78rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -718,6 +720,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   opacity: .45;
   transition: opacity var(--speed), color var(--speed);
 }
+.footer-links a svg { flex-shrink: 0; }
 .footer-links a:hover { opacity: 1; color: var(--accent); }
 [data-theme="light"] .footer-links a:hover { color: var(--accent); }
 
