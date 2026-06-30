@@ -69,8 +69,19 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
-  background: var(--bg);
+  background-size: 400% 400%;
+  animation: bg-gradient 20s ease infinite;
   transition: background var(--speed) var(--ease);
+}
+
+/* Light mode shifting gradient colors (subtle off-whites and brand gold-hints) */
+[data-theme="light"] .ambient-bg {
+  background: linear-gradient(-45deg, #FFFFFF, #FFFCF2, #FFFDF7, #FFF8E7);
+}
+
+/* Dark mode shifting gradient colors (subtle deep blacks and dark brand amber/indigo hints) */
+[data-theme="dark"] .ambient-bg {
+  background: linear-gradient(-45deg, #0A0A0A, #12110c, #0b0c10, #0a0a0f);
 }
 
 .cube {
