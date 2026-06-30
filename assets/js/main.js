@@ -1,6 +1,6 @@
 /**
- * Impact Faktory — Main Site JavaScript
- * Handles: theme toggle, mobile nav, active nav link, year, misc UX.
+ * Impact Faktory — main.js
+ * Theme toggle, mobile nav, active link, year, work filter, contact form, scroll reveal.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,40 +13,41 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
 });
 
-/* ── Theme Toggle ────────────────────────────────────────────── */
+/* ── Theme ──────────────────────────────────────────────────────── */
 function initTheme() {
-  const root   = document.documentElement;
-  const btn    = document.getElementById('theme-toggle');
+  const btn = document.getElementById('theme-toggle');
   if (!btn) return;
 
-  // Determine initial theme
-  const stored = localStorage.getItem('if-theme');
-  const sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const isDark  = stored ? stored === 'dark' : sysDark;
-
-  setTheme(isDark);
+  const stored   = localStorage.getItem('if-theme');
+  const sysDark  = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const isDark   = stored ? stored === 'dark' : sysDark;
+  applyTheme(isDark);
 
   btn.addEventListener('click', () => {
-    const next = root.getAttribute('data-theme') !== 'dark';
-    setTheme(next);
+    const next = document.documentElement.getAttribute('data-theme') !== 'dark';
+    applyTheme(next);
     localStorage.setItem('if-theme', next ? 'dark' : 'light');
   });
 
-  // Sync system-preference changes when no stored override
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-    if (!localStorage.getItem('if-theme')) setTheme(e.matches);
+    if (!localStorage.getItem('if-theme')) applyTheme(e.matches);
   });
 }
 
-function setTheme(dark) {
-  const root = document.documentElement;
-  root.setAttribute('data-theme', dark ? 'dark' : 'light');
+function applyTheme(dark) {
+  document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
   const btn = document.getElementById('theme-toggle');
   if (btn) btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+
+  // Update nav logo mark dark squares
+  document.querySelectorAll('.nav-logo-mark .dark-sq').forEach(el => {
+    el.setAttribute('fill', dark ? '#FFFFFF' : '#0A0A0A');
+  });
+
   window.dispatchEvent(new CustomEvent('themechanged', { detail: { dark } }));
 }
 
-/* ── Mobile Nav ──────────────────────────────────────────────── */
+/* ── Mobile Nav ─────────────────────────────────────────────────── */
 function initMobileNav() {
   const menuBtn = document.getElementById('mobile-menu-btn');
   const nav     = document.getElementById('mobile-nav');
@@ -54,11 +55,9 @@ function initMobileNav() {
 
   menuBtn.addEventListener('click', () => {
     const open = nav.classList.toggle('open');
-    menuBtn.setAttribute('aria-expanded', open);
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
     menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   });
-
-  // Close on link click
   nav.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       nav.classList.remove('open');
@@ -67,43 +66,42 @@ function initMobileNav() {
   });
 }
 
-/* ── Active Nav Link ─────────────────────────────────────────── */
+/* ── Active Nav Link ────────────────────────────────────────────── */
 function setActiveNav() {
-  const path = window.location.pathname.split('/').pop() || 'index.html';
+  const page = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-link').forEach(link => {
-    const href = link.getAttribute('href');
-    link.classList.toggle('active', href === path || (path === '' && href === 'index.html'));
+    const href = link.getAttribute('href') || '';
+    link.classList.toggle('active', href === page || (page === '' && href === 'index.html'));
   });
 }
 
-/* ── Current Year ────────────────────────────────────────────── */
+/* ── Year ───────────────────────────────────────────────────────── */
 function setYear() {
   document.querySelectorAll('#year').forEach(el => {
     el.textContent = new Date().getFullYear();
   });
 }
 
-/* ── Work Page Filter ────────────────────────────────────────── */
+/* ── Work Filter ────────────────────────────────────────────────── */
 function initWorkFilter() {
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const cards      = document.querySelectorAll('.case-card');
-  if (!filterBtns.length) return;
+  const btns  = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.case-card');
+  if (!btns.length) return;
 
-  filterBtns.forEach(btn => {
+  btns.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
+      btns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
       const filter = btn.dataset.filter;
       cards.forEach(card => {
         const match = filter === 'all' || card.dataset.category === filter;
         card.classList.toggle('hidden', !match);
-        // Animate in
         if (match) {
           card.style.opacity = '0';
-          card.style.transform = 'translateY(12px)';
+          card.style.transform = 'translateY(10px)';
           requestAnimationFrame(() => {
-            card.style.transition = 'opacity .4s ease, transform .4s ease';
+            card.style.transition = 'opacity .35s ease, transform .35s ease';
             card.style.opacity = '1';
             card.style.transform = 'translateY(0)';
           });
@@ -113,7 +111,7 @@ function initWorkFilter() {
   });
 }
 
-/* ── Contact Form ────────────────────────────────────────────── */
+/* ── Contact Form ───────────────────────────────────────────────── */
 function initContactForm() {
   const form    = document.getElementById('contact-form');
   const success = document.getElementById('form-success');
@@ -122,10 +120,10 @@ function initContactForm() {
   form.addEventListener('submit', async e => {
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
+    const orig = btn.textContent;
     btn.textContent = 'Sending…';
     btn.disabled = true;
 
-    // Use Formspree if action is set, otherwise simulate
     const action = form.getAttribute('action');
     if (action && action !== '#') {
       try {
@@ -135,20 +133,22 @@ function initContactForm() {
           body: new FormData(form),
         });
         if (res.ok) { showSuccess(form, success); return; }
-      } catch (_) { /* fallback */ }
+        btn.textContent = orig;
+        btn.disabled = false;
+        return;
+      } catch (_) {}
     }
-
-    // Demo fallback (no real endpoint yet)
-    setTimeout(() => showSuccess(form, success), 600);
+    // Formspree not connected yet — show success for demo
+    setTimeout(() => showSuccess(form, success), 700);
   });
 }
 
 function showSuccess(form, success) {
   form.style.display = 'none';
-  if (success) { success.style.display = 'block'; }
+  if (success) success.style.display = 'block';
 }
 
-/* ── Scroll Reveal ───────────────────────────────────────────── */
+/* ── Scroll Reveal ──────────────────────────────────────────────── */
 function initScrollReveal() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
@@ -159,19 +159,12 @@ function initScrollReveal() {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
 
   document.querySelectorAll('.card, .stat-item, .service-row, .case-card, .team-card').forEach(el => {
     el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity .55s var(--ease, ease), transform .55s var(--ease, ease)';
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity .5s ease, transform .5s ease';
     observer.observe(el);
   });
 }
-
-// Handle reveal class
-document.head.insertAdjacentHTML('beforeend', `
-  <style>
-    .revealed { opacity: 1 !important; transform: none !important; }
-  </style>
-`);
