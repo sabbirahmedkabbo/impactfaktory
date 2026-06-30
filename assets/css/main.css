@@ -196,7 +196,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   z-index: 100;
   background: var(--bg);
   border-bottom: 2px solid var(--border);
-  transition: background var(--speed) var(--ease), border-color var(--speed) var(--ease);
+  transition: background var(--speed) var(--ease), border-color var(--speed) var(--ease), box-shadow var(--speed) var(--ease);
+}
+/* Premium shadow on scroll */
+.site-header.scrolled {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
+}
+[data-theme="dark"] .site-header.scrolled {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
 }
 
 .nav-inner {
@@ -207,6 +214,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: flex;
   align-items: center;
   gap: 2rem;
+  transition: height var(--speed) var(--ease);
+}
+.site-header.scrolled .nav-inner {
+  height: 52px; /* Shrunk header height */
 }
 
 /* Logo */
@@ -222,6 +233,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   height: 32px;
   flex-shrink: 0;
   object-fit: contain;
+  transition: width var(--speed) var(--ease), height var(--speed) var(--ease);
+}
+.site-header.scrolled .nav-logo-mark {
+  width: 26px; /* Shrunk logo size */
+  height: 26px;
 }
 .nav-logo-wordmark {
   font-family: var(--font-head);
@@ -230,6 +246,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--text);
+  transition: font-size var(--speed) var(--ease);
+}
+.site-header.scrolled .nav-logo-wordmark {
+  font-size: 0.9rem; /* Shrunk text size */
 }
 
 /* Footer logo img */
