@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70" shape-rendering="crispEdges" role="img" aria-label="Impact Faktory logo mark">
+  <!-- 6×6 pixel grid. Cell=10, gap=2. Yellow fills bottom-left diagonal, black top-right. -->
+  <!-- Row 0 (top) — all black -->
+  <rect x="0"  y="0"  width="10" height="10" fill="#18181B"/>
+  <rect x="12" y="0"  width="10" height="10" fill="#18181B"/>
+  <rect x="24" y="0"  width="10" height="10" fill="#18181B"/>
+  <rect x="36" y="0"  width="10" height="10" fill="#18181B"/>
+  <rect x="48" y="0"  width="10" height="10" fill="#18181B"/>
+  <rect x="60" y="0"  width="10" height="10" fill="#18181B"/>
+  <!-- Row 1 — 1 yellow -->
+  <rect x="0"  y="12" width="10" height="10" fill="#FFE600"/>
+  <rect x="12" y="12" width="10" height="10" fill="#18181B"/>
+  <rect x="24" y="12" width="10" height="10" fill="#18181B"/>
+  <rect x="36" y="12" width="10" height="10" fill="#18181B"/>
+  <rect x="48" y="12" width="10" height="10" fill="#18181B"/>
+  <rect x="60" y="12" width="10" height="10" fill="#18181B"/>
+  <!-- Row 2 — 2 yellow -->
+  <rect x="0"  y="24" width="10" height="10" fill="#FFE600"/>
+  <rect x="12" y="24" width="10" height="10" fill="#FFE600"/>
+  <rect x="24" y="24" width="10" height="10" fill="#18181B"/>
+  <rect x="36" y="24" width="10" height="10" fill="#18181B"/>
+  <rect x="48" y="24" width="10" height="10" fill="#18181B"/>
+  <rect x="60" y="24" width="10" height="10" fill="#18181B"/>
+  <!-- Row 3 — 3 yellow -->
+  <rect x="0"  y="36" width="10" height="10" fill="#FFE600"/>
+  <rect x="12" y="36" width="10" height="10" fill="#FFE600"/>
+  <rect x="24" y="36" width="10" height="10" fill="#FFE600"/>
+  <rect x="36" y="36" width="10" height="10" fill="#18181B"/>
+  <rect x="48" y="36" width="10" height="10" fill="#18181B"/>
+  <rect x="60" y="36" width="10" height="10" fill="#18181B"/>
+  <!-- Row 4 — 4 yellow -->
+  <rect x="0"  y="48" width="10" height="10" fill="#FFE600"/>
+  <rect x="12" y="48" width="10" height="10" fill="#FFE600"/>
+  <rect x="24" y="48" width="10" height="10" fill="#FFE600"/>
+  <rect x="36" y="48" width="10" height="10" fill="#FFE600"/>
+  <rect x="48" y="48" width="10" height="10" fill="#18181B"/>
+  <rect x="60" y="48" width="10" height="10" fill="#18181B"/>
+  <!-- Row 5 (bottom) — 5 yellow, 1 black -->
+  <rect x="0"  y="60" width="10" height="10" fill="#FFE600"/>
+  <rect x="12" y="60" width="10" height="10" fill="#FFE600"/>
+  <rect x="24" y="60" width="10" height="10" fill="#FFE600"/>
+  <rect x="36" y="60" width="10" height="10" fill="#FFE600"/>
+  <rect x="48" y="60" width="10" height="10" fill="#FFE600"/>
+  <rect x="60" y="60" width="10" height="10" fill="#18181B"/>
+</svg>
