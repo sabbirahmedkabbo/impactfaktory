@@ -10,99 +10,102 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/main.css" />
-  <script>
-    (function(){var s=localStorage.getItem('if-theme'),d=window.matchMedia('(prefers-color-scheme: dark)').matches;
-    document.documentElement.setAttribute('data-theme',(s?s==='dark':d)?'dark':'light');})();
-  </script>
+  <script>(function(){var s=localStorage.getItem('if-theme'),d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',(s?s==='dark':d)?'dark':'light');})();</script>
 </head>
 <body>
-  <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
   <header class="site-header">
     <nav class="nav-inner" role="navigation" aria-label="Primary navigation">
       <a href="index.html" class="nav-logo" aria-label="Impact Faktory — Home">
-        <svg id="wordmark" viewBox="0 0 304 18" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges"></svg>
+        <svg class="nav-logo-mark" viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" aria-hidden="true">
+          <rect x="0"  y="0"  width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="12" y="0"  width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="24" y="0"  width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="36" y="0"  width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="48" y="0"  width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="60" y="0"  width="10" height="10" class="dark-sq" fill="#0A0A0A"/>
+          <rect x="0"  y="12" width="10" height="10" fill="#FFE600"/><rect x="12" y="12" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="24" y="12" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="36" y="12" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="48" y="12" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="60" y="12" width="10" height="10" class="dark-sq" fill="#0A0A0A"/>
+          <rect x="0"  y="24" width="10" height="10" fill="#FFE600"/><rect x="12" y="24" width="10" height="10" fill="#FFE600"/><rect x="24" y="24" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="36" y="24" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="48" y="24" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="60" y="24" width="10" height="10" class="dark-sq" fill="#0A0A0A"/>
+          <rect x="0"  y="36" width="10" height="10" fill="#FFE600"/><rect x="12" y="36" width="10" height="10" fill="#FFE600"/><rect x="24" y="36" width="10" height="10" fill="#FFE600"/><rect x="36" y="36" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="48" y="36" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="60" y="36" width="10" height="10" class="dark-sq" fill="#0A0A0A"/>
+          <rect x="0"  y="48" width="10" height="10" fill="#FFE600"/><rect x="12" y="48" width="10" height="10" fill="#FFE600"/><rect x="24" y="48" width="10" height="10" fill="#FFE600"/><rect x="36" y="48" width="10" height="10" fill="#FFE600"/><rect x="48" y="48" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="60" y="48" width="10" height="10" class="dark-sq" fill="#0A0A0A"/>
+          <rect x="0"  y="60" width="10" height="10" fill="#FFE600"/><rect x="12" y="60" width="10" height="10" fill="#FFE600"/><rect x="24" y="60" width="10" height="10" fill="#FFE600"/><rect x="36" y="60" width="10" height="10" fill="#FFE600"/><rect x="48" y="60" width="10" height="10" fill="#FFE600"/><rect x="60" y="60" width="10" height="10" class="dark-sq" fill="#0A0A0A"/>
+        </svg>
+        <span class="nav-logo-wordmark">Impact Faktory</span>
       </a>
       <ul class="nav-links" role="list">
-        <li><a href="index.html" class="nav-link" id="nav-home">Home</a></li>
-        <li><a href="about.html" class="nav-link active" id="nav-about">About</a></li>
-        <li><a href="services.html" class="nav-link" id="nav-services">Services</a></li>
-        <li><a href="work.html" class="nav-link" id="nav-work">Work</a></li>
-        <li><a href="contact.html" class="nav-link" id="nav-contact">Contact</a></li>
+        <li><a href="index.html"    class="nav-link">Home</a></li>
+        <li><a href="about.html"    class="nav-link active">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="work.html"     class="nav-link">Work</a></li>
+        <li><a href="contact.html"  class="nav-link">Contact</a></li>
       </ul>
-      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode" aria-pressed="false">
-        <span class="toggle-track" aria-hidden="true"><span class="toggle-thumb"></span></span>
-      </button>
-      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode" aria-pressed="false"><span class="toggle-track" aria-hidden="true"><span class="toggle-thumb"></span></span></button>
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </nav>
     <div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Mobile navigation">
       <ul role="list">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="index.html"    class="nav-link">Home</a></li>
+        <li><a href="about.html"    class="nav-link">About</a></li>
         <li><a href="services.html" class="nav-link">Services</a></li>
-        <li><a href="work.html" class="nav-link">Work</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="work.html"     class="nav-link">Work</a></li>
+        <li><a href="contact.html"  class="nav-link">Contact</a></li>
       </ul>
     </div>
   </header>
 
   <main id="main-content">
+
     <div class="page-banner">
       <div class="container">
         <p class="page-banner-label">Impact Faktory / About</p>
-        <h1 class="page-banner-title"><span class="yellow-underline">Our</span><br>Manifesto</h1>
+        <h1 class="page-banner-title">Our<br>Manifesto</h1>
       </div>
     </div>
 
     <section class="section">
       <div class="container">
+
         <p class="manifesto-lead">
           The market is cluttered with agencies playing it safe.<br>
-          We don't do safety. We don't do blending.
+          We don't do safety. We don't do blending in.
         </p>
         <p class="manifesto-body">
           At Impact Faktory, we build cultural landmarks — experiences that cannot be ignored, narratives that force compliance. Every banner, event, and word we publish is an act of defiance against the mundane.
         </p>
         <p class="manifesto-body">
-          We design campaigns that trigger perception shifts, move millions, and hijack the cultural conversation. If you are looking for comfortable status-quo reporting, go elsewhere.
+          We design campaigns that trigger perception shifts, move millions, and hijack the cultural conversation. If you're looking for comfortable status-quo reporting, go elsewhere.
         </p>
-        <p class="manifesto-body" style="font-weight:700;">
-          If you want to make an <span style="color:var(--accent); background:var(--text); padding:0 .3em;">IMPACT</span>, welcome to the factory.
+        <p class="manifesto-body" style="font-weight:700; color:var(--text);">
+          If you want to make an <mark style="background:var(--accent); color:#0A0A0A; padding: 0 .3em;">IMPACT</mark>, welcome to the factory.
         </p>
 
         <div style="margin-top: 6rem;">
-          <h2 class="section-title" style="margin-bottom: 2.5rem;"><span class="yellow-underline">The Disruptors</span></h2>
+          <p class="section-label">The Team</p>
+          <h2 class="section-title">The Disruptors</h2>
           <div class="team-grid">
             <div class="team-card">
-              <div class="team-img-placeholder" aria-hidden="true" style="opacity:.12; display:flex; align-items:center; justify-content:center; font-size:3rem; background:var(--text);">
-                <span style="color:var(--bg); opacity:.6;">SA</span>
+              <div class="team-avatar">
+                <span class="team-initials">SA</span>
               </div>
               <div class="team-info">
                 <h3 class="team-name">Sabbir Ahmed</h3>
                 <span class="team-role">Founder &amp; Chief Disruptor</span>
-                <p style="margin-top:1rem; font-size:.9rem; opacity:.75;">Built Impact Faktory to prove that disruptive strategy beats comfortable mediocrity every time.</p>
+                <p class="team-bio">Built Impact Faktory to prove that disruptive strategy beats comfortable mediocrity every time.</p>
               </div>
             </div>
             <div class="team-card">
-              <div class="team-img-placeholder" aria-hidden="true" style="opacity:.12; display:flex; align-items:center; justify-content:center; font-size:3rem; background:var(--text);">
-                <span style="color:var(--bg); opacity:.6;">JP</span>
+              <div class="team-avatar">
+                <span class="team-initials">JP</span>
               </div>
               <div class="team-info">
                 <h3 class="team-name">Jessica Pierce</h3>
                 <span class="team-role">Head of Event Activation</span>
-                <p style="margin-top:1rem; font-size:.9rem; opacity:.75;">12 years engineering live experiences that convert spectators into advocates.</p>
+                <p class="team-bio">12 years engineering live experiences that convert spectators into lifelong advocates.</p>
               </div>
             </div>
             <div class="team-card">
-              <div class="team-img-placeholder" aria-hidden="true" style="opacity:.12; display:flex; align-items:center; justify-content:center; font-size:3rem; background:var(--text);">
-                <span style="color:var(--bg); opacity:.6;">MV</span>
+              <div class="team-avatar">
+                <span class="team-initials">MV</span>
               </div>
               <div class="team-info">
                 <h3 class="team-name">Marcus Vance</h3>
                 <span class="team-role">Director of Perception Engineering</span>
-                <p style="margin-top:1rem; font-size:.9rem; opacity:.75;">Specialist in reshaping public sentiment at scale through strategic narrative engineering.</p>
+                <p class="team-bio">Specialist in reshaping public sentiment at scale through strategic narrative engineering.</p>
               </div>
             </div>
           </div>
@@ -110,22 +113,31 @@
 
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <a href="index.html" class="footer-logo"><svg id="footer-wordmark" viewBox="0 0 304 18" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges"></svg></a>
+      <a href="index.html" class="footer-logo" aria-label="Impact Faktory">
+        <svg class="footer-logo-mark" viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" aria-hidden="true">
+          <rect x="0"  y="0"  width="10" height="10" fill="#FFFFFF"/><rect x="12" y="0"  width="10" height="10" fill="#FFFFFF"/><rect x="24" y="0"  width="10" height="10" fill="#FFFFFF"/><rect x="36" y="0"  width="10" height="10" fill="#FFFFFF"/><rect x="48" y="0"  width="10" height="10" fill="#FFFFFF"/><rect x="60" y="0"  width="10" height="10" fill="#FFFFFF"/>
+          <rect x="0"  y="12" width="10" height="10" fill="#FFE600"/><rect x="12" y="12" width="10" height="10" fill="#FFFFFF"/><rect x="24" y="12" width="10" height="10" fill="#FFFFFF"/><rect x="36" y="12" width="10" height="10" fill="#FFFFFF"/><rect x="48" y="12" width="10" height="10" fill="#FFFFFF"/><rect x="60" y="12" width="10" height="10" fill="#FFFFFF"/>
+          <rect x="0"  y="24" width="10" height="10" fill="#FFE600"/><rect x="12" y="24" width="10" height="10" fill="#FFE600"/><rect x="24" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="36" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="48" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="60" y="24" width="10" height="10" fill="#FFFFFF"/>
+          <rect x="0"  y="36" width="10" height="10" fill="#FFE600"/><rect x="12" y="36" width="10" height="10" fill="#FFE600"/><rect x="24" y="36" width="10" height="10" fill="#FFE600"/><rect x="36" y="36" width="10" height="10" fill="#FFFFFF"/><rect x="48" y="36" width="10" height="10" fill="#FFFFFF"/><rect x="60" y="36" width="10" height="10" fill="#FFFFFF"/>
+          <rect x="0"  y="48" width="10" height="10" fill="#FFE600"/><rect x="12" y="48" width="10" height="10" fill="#FFE600"/><rect x="24" y="48" width="10" height="10" fill="#FFE600"/><rect x="36" y="48" width="10" height="10" fill="#FFE600"/><rect x="48" y="48" width="10" height="10" fill="#FFFFFF"/><rect x="60" y="48" width="10" height="10" fill="#FFFFFF"/>
+          <rect x="0"  y="60" width="10" height="10" fill="#FFE600"/><rect x="12" y="60" width="10" height="10" fill="#FFE600"/><rect x="24" y="60" width="10" height="10" fill="#FFE600"/><rect x="36" y="60" width="10" height="10" fill="#FFE600"/><rect x="48" y="60" width="10" height="10" fill="#FFE600"/><rect x="60" y="60" width="10" height="10" fill="#FFFFFF"/>
+        </svg>
+        <span class="footer-logo-wordmark">Impact Faktory</span>
+      </a>
       <p class="footer-copy">© <span id="year"></span> Impact Faktory. All rights reserved.</p>
       <ul class="footer-links" role="list">
         <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a></li>
-        <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LI</a></li>
-        <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">X</a></li>
+        <li><a href="https://linkedin.com"  target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LI</a></li>
+        <li><a href="https://twitter.com"   target="_blank" rel="noopener noreferrer" aria-label="X">X</a></li>
       </ul>
     </div>
   </footer>
 
-  <script src="assets/js/logo.js"></script>
-  <script src="assets/js/bg.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
