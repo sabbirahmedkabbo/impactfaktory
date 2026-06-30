@@ -102,11 +102,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   height: 32px;
   flex-shrink: 0;
   object-fit: contain;
-  /* PNG has black squares on white bg — invert in dark mode to get white on black */
-  transition: filter var(--speed);
-}
-[data-theme="dark"] .nav-logo-mark {
-  filter: invert(1);
 }
 .nav-logo-wordmark {
   font-family: var(--font-head);
