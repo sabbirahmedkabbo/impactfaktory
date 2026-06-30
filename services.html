@@ -10,50 +10,56 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/main.css" />
-  <script>
-    (function(){var s=localStorage.getItem('if-theme'),d=window.matchMedia('(prefers-color-scheme: dark)').matches;
-    document.documentElement.setAttribute('data-theme',(s?s==='dark':d)?'dark':'light');})();
-  </script>
+  <script>(function(){var s=localStorage.getItem('if-theme'),d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',(s?s==='dark':d)?'dark':'light');})();</script>
 </head>
 <body>
-  <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
   <header class="site-header">
     <nav class="nav-inner" role="navigation" aria-label="Primary navigation">
-      <a href="index.html" class="nav-logo"><svg id="wordmark" viewBox="0 0 304 18" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges"></svg></a>
+      <a href="index.html" class="nav-logo" aria-label="Impact Faktory — Home">
+        <svg class="nav-logo-mark" viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" aria-hidden="true">
+          <rect x="0"  y="0"  width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="12" y="0"  width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="24" y="0"  width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="36" y="0"  width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="48" y="0"  width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="60" y="0"  width="10" height="10" class="dark-sq" fill="#0A0A0A"/>
+          <rect x="0"  y="12" width="10" height="10" fill="#FFE600"/><rect x="12" y="12" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="24" y="12" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="36" y="12" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="48" y="12" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="60" y="12" width="10" height="10" class="dark-sq" fill="#0A0A0A"/>
+          <rect x="0"  y="24" width="10" height="10" fill="#FFE600"/><rect x="12" y="24" width="10" height="10" fill="#FFE600"/><rect x="24" y="24" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="36" y="24" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="48" y="24" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="60" y="24" width="10" height="10" class="dark-sq" fill="#0A0A0A"/>
+          <rect x="0"  y="36" width="10" height="10" fill="#FFE600"/><rect x="12" y="36" width="10" height="10" fill="#FFE600"/><rect x="24" y="36" width="10" height="10" fill="#FFE600"/><rect x="36" y="36" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="48" y="36" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="60" y="36" width="10" height="10" class="dark-sq" fill="#0A0A0A"/>
+          <rect x="0"  y="48" width="10" height="10" fill="#FFE600"/><rect x="12" y="48" width="10" height="10" fill="#FFE600"/><rect x="24" y="48" width="10" height="10" fill="#FFE600"/><rect x="36" y="48" width="10" height="10" fill="#FFE600"/><rect x="48" y="48" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="60" y="48" width="10" height="10" class="dark-sq" fill="#0A0A0A"/>
+          <rect x="0"  y="60" width="10" height="10" fill="#FFE600"/><rect x="12" y="60" width="10" height="10" fill="#FFE600"/><rect x="24" y="60" width="10" height="10" fill="#FFE600"/><rect x="36" y="60" width="10" height="10" fill="#FFE600"/><rect x="48" y="60" width="10" height="10" fill="#FFE600"/><rect x="60" y="60" width="10" height="10" class="dark-sq" fill="#0A0A0A"/>
+        </svg>
+        <span class="nav-logo-wordmark">Impact Faktory</span>
+      </a>
       <ul class="nav-links" role="list">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="index.html"    class="nav-link">Home</a></li>
+        <li><a href="about.html"    class="nav-link">About</a></li>
         <li><a href="services.html" class="nav-link active">Services</a></li>
-        <li><a href="work.html" class="nav-link">Work</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="work.html"     class="nav-link">Work</a></li>
+        <li><a href="contact.html"  class="nav-link">Contact</a></li>
       </ul>
-      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode"><span class="toggle-track" aria-hidden="true"><span class="toggle-thumb"></span></span></button>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode" aria-pressed="false"><span class="toggle-track" aria-hidden="true"><span class="toggle-thumb"></span></span></button>
       <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </nav>
     <div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Mobile navigation">
       <ul role="list">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="index.html"    class="nav-link">Home</a></li>
+        <li><a href="about.html"    class="nav-link">About</a></li>
         <li><a href="services.html" class="nav-link">Services</a></li>
-        <li><a href="work.html" class="nav-link">Work</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="work.html"     class="nav-link">Work</a></li>
+        <li><a href="contact.html"  class="nav-link">Contact</a></li>
       </ul>
     </div>
   </header>
 
   <main id="main-content">
+
     <div class="page-banner">
       <div class="container">
         <p class="page-banner-label">Impact Faktory / Services</p>
-        <h1 class="page-banner-title">What We<br><span class="yellow-underline">Deploy</span></h1>
+        <h1 class="page-banner-title">What We<br>Deploy</h1>
       </div>
     </div>
 
     <section class="section">
       <div class="container">
 
-        <!-- Marketing & Advertising -->
         <div class="service-row" id="marketing">
           <div class="service-header">
             <div>
@@ -63,12 +69,8 @@
             <span class="service-tag">Core Service</span>
           </div>
           <div class="service-body">
-            <p class="service-desc">
-              We engineer campaigns engineered to cut through noise and seize market share. From bold OOH stunts to precision digital targeting, our advertising work doesn't exist to inform — it exists to convert, disrupt, and dominate.
-              <br><br>
-              We blend behavioural psychology, cultural intelligence, and creative audacity to produce campaigns that become cultural events in their own right.
-            </p>
-            <ul class="service-list" aria-label="Marketing & Advertising offerings">
+            <p class="service-desc">We engineer campaigns designed to cut through noise and seize market share. From bold OOH stunts to precision digital targeting, our advertising work doesn't exist to inform — it exists to convert, disrupt, and dominate.<br><br>We blend behavioural psychology, cultural intelligence, and creative audacity to produce campaigns that become cultural events in their own right.</p>
+            <ul class="service-list" aria-label="Marketing offerings">
               <li class="service-list-item">360° Disruptive Campaign Strategy</li>
               <li class="service-list-item">Out-Of-Home &amp; Wild Posting</li>
               <li class="service-list-item">Paid Social &amp; Performance Media</li>
@@ -79,7 +81,6 @@
           </div>
         </div>
 
-        <!-- Event Activation -->
         <div class="service-row" id="events">
           <div class="service-header">
             <div>
@@ -89,11 +90,7 @@
             <span class="service-tag">Experiential</span>
           </div>
           <div class="service-body">
-            <p class="service-desc">
-              A great event is not a gathering — it's a portal. We design and execute immersive activations that collapse the distance between brand and human, forging emotional bonds that outlast any impression metric.
-              <br><br>
-              Every activation we produce is designed to be shareable, scalable, and unforgettable.
-            </p>
+            <p class="service-desc">A great event is not a gathering — it's a portal. We design and execute immersive activations that collapse the distance between brand and human, forging emotional bonds that outlast any impression metric.<br><br>Every activation we produce is designed to be shareable, scalable, and unforgettable.</p>
             <ul class="service-list" aria-label="Event Activation offerings">
               <li class="service-list-item">Concept &amp; Experience Design</li>
               <li class="service-list-item">Brand Activation Pop-Ups</li>
@@ -105,7 +102,6 @@
           </div>
         </div>
 
-        <!-- Brand Identity -->
         <div class="service-row" id="identity">
           <div class="service-header">
             <div>
@@ -115,11 +111,7 @@
             <span class="service-tag">Foundational</span>
           </div>
           <div class="service-body">
-            <p class="service-desc">
-              We forge visual identities that command authority from first glance. No trends. No templates. Only decisive visual systems and brand stories that position you as the only logical choice.
-              <br><br>
-              We dig into your DNA, extract what's irreplaceable, and weaponise it.
-            </p>
+            <p class="service-desc">We forge visual identities that command authority from first glance. No trends. No templates. Only decisive visual systems and brand stories that position you as the only logical choice.<br><br>We dig into your DNA, extract what's irreplaceable, and weaponise it.</p>
             <ul class="service-list" aria-label="Brand Identity offerings">
               <li class="service-list-item">Brand Strategy &amp; Positioning</li>
               <li class="service-list-item">Visual Identity Systems</li>
@@ -131,7 +123,6 @@
           </div>
         </div>
 
-        <!-- Perception Shift -->
         <div class="service-row" id="perception">
           <div class="service-header">
             <div>
@@ -141,11 +132,7 @@
             <span class="service-tag">Strategic</span>
           </div>
           <div class="service-body">
-            <p class="service-desc">
-              When the market has the wrong picture of your brand, conventional advertising fixes nothing. Perception Shift is our highest-leverage offering — a strategic programme that rewires consumer belief through targeted narrative engineering, social proof architecture, and cultural infiltration.
-              <br><br>
-              We don't polish your image. We redesign it at the root.
-            </p>
+            <p class="service-desc">When the market has the wrong picture of your brand, conventional advertising fixes nothing. Perception Shift is our highest-leverage offering — a strategic programme that rewires consumer belief through targeted narrative engineering, social proof architecture, and cultural infiltration.<br><br>We don't polish your image. We redesign it at the root.</p>
             <ul class="service-list" aria-label="Perception Shift offerings">
               <li class="service-list-item">Brand Reputation Audit</li>
               <li class="service-list-item">Narrative Reframing Strategy</li>
@@ -163,18 +150,26 @@
 
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <a href="index.html" class="footer-logo"><svg id="footer-wordmark" viewBox="0 0 304 18" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges"></svg></a>
+      <a href="index.html" class="footer-logo" aria-label="Impact Faktory">
+        <svg class="footer-logo-mark" viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" aria-hidden="true">
+          <rect x="0"  y="0"  width="10" height="10" fill="#FFFFFF"/><rect x="12" y="0"  width="10" height="10" fill="#FFFFFF"/><rect x="24" y="0"  width="10" height="10" fill="#FFFFFF"/><rect x="36" y="0"  width="10" height="10" fill="#FFFFFF"/><rect x="48" y="0"  width="10" height="10" fill="#FFFFFF"/><rect x="60" y="0"  width="10" height="10" fill="#FFFFFF"/>
+          <rect x="0"  y="12" width="10" height="10" fill="#FFE600"/><rect x="12" y="12" width="10" height="10" fill="#FFFFFF"/><rect x="24" y="12" width="10" height="10" fill="#FFFFFF"/><rect x="36" y="12" width="10" height="10" fill="#FFFFFF"/><rect x="48" y="12" width="10" height="10" fill="#FFFFFF"/><rect x="60" y="12" width="10" height="10" fill="#FFFFFF"/>
+          <rect x="0"  y="24" width="10" height="10" fill="#FFE600"/><rect x="12" y="24" width="10" height="10" fill="#FFE600"/><rect x="24" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="36" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="48" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="60" y="24" width="10" height="10" fill="#FFFFFF"/>
+          <rect x="0"  y="36" width="10" height="10" fill="#FFE600"/><rect x="12" y="36" width="10" height="10" fill="#FFE600"/><rect x="24" y="36" width="10" height="10" fill="#FFE600"/><rect x="36" y="36" width="10" height="10" fill="#FFFFFF"/><rect x="48" y="36" width="10" height="10" fill="#FFFFFF"/><rect x="60" y="36" width="10" height="10" fill="#FFFFFF"/>
+          <rect x="0"  y="48" width="10" height="10" fill="#FFE600"/><rect x="12" y="48" width="10" height="10" fill="#FFE600"/><rect x="24" y="48" width="10" height="10" fill="#FFE600"/><rect x="36" y="48" width="10" height="10" fill="#FFE600"/><rect x="48" y="48" width="10" height="10" fill="#FFFFFF"/><rect x="60" y="48" width="10" height="10" fill="#FFFFFF"/>
+          <rect x="0"  y="60" width="10" height="10" fill="#FFE600"/><rect x="12" y="60" width="10" height="10" fill="#FFE600"/><rect x="24" y="60" width="10" height="10" fill="#FFE600"/><rect x="36" y="60" width="10" height="10" fill="#FFE600"/><rect x="48" y="60" width="10" height="10" fill="#FFE600"/><rect x="60" y="60" width="10" height="10" fill="#FFFFFF"/>
+        </svg>
+        <span class="footer-logo-wordmark">Impact Faktory</span>
+      </a>
       <p class="footer-copy">© <span id="year"></span> Impact Faktory. All rights reserved.</p>
       <ul class="footer-links" role="list">
         <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a></li>
-        <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LI</a></li>
-        <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">X</a></li>
+        <li><a href="https://linkedin.com"  target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LI</a></li>
+        <li><a href="https://twitter.com"   target="_blank" rel="noopener noreferrer" aria-label="X">X</a></li>
       </ul>
     </div>
   </footer>
 
-  <script src="assets/js/logo.js"></script>
-  <script src="assets/js/bg.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
