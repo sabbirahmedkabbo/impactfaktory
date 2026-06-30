@@ -62,7 +62,7 @@ ul, ol { list-style: none; }
 button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
 
 
-/* ── Ambient Background (Minimal Animation) ─────────────────────── */
+/* ── Ambient Background (Floating Pixel Cubes) ─────────────────── */
 .ambient-bg {
   position: fixed;
   inset: 0;
@@ -73,81 +73,88 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   transition: background var(--speed) var(--ease);
 }
 
-.orb {
+.cube {
   position: absolute;
-  border-radius: 50%;
-  filter: blur(120px);
-  will-change: transform;
-  mix-blend-mode: multiply;
-  pointer-events: none;
+  bottom: -80px;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--text);
+  background: rgba(255, 230, 0, 0.03); /* Subtle brand yellow */
+  opacity: 0.12;
+  transform-origin: center;
+  will-change: transform, opacity;
+  /* Use steps(60) to achieve a retro, low-framerate pixelated movement */
+  animation: cube-float 15s infinite linear steps(60);
 }
 
-/* Light Mode: extremely subtle glowing spots */
-.orb-1 {
-  top: -15%;
-  left: -15%;
-  width: 45vw;
-  height: 45vw;
-  background: rgba(255, 230, 0, 0.12); /* Muted brand yellow */
-  animation: float-1 12s infinite alternate ease-in-out;
+/* Vary border colors, sizes, and backgrounds */
+.cube:nth-child(2n) {
+  border-color: var(--text);
+  width: 14px;
+  height: 14px;
+  background: transparent;
+  animation-duration: 18s;
 }
 
-.orb-2 {
-  bottom: -20%;
-  right: -10%;
-  width: 50vw;
-  height: 50vw;
-  background: rgba(0, 136, 255, 0.04); /* Subtlest warm indigo/blue */
-  animation: float-2 15s infinite alternate ease-in-out;
+.cube:nth-child(3n) {
+  border-color: var(--accent);
+  /* Darken slightly in light mode for readability */
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 230, 0, 0.06);
+  animation-duration: 13s;
+}
+[data-theme="light"] .cube:nth-child(3n) {
+  border-color: #B8A200;
 }
 
-.orb-3 {
-  top: 35%;
-  left: 45%;
-  width: 30vw;
-  height: 30vw;
-  background: rgba(255, 230, 0, 0.08); /* Smaller helper yellow */
-  animation: float-3 18s infinite alternate ease-in-out;
+/* Staggered entry points and timing offsets */
+.cube:nth-child(1) { left: 8vw;  animation-delay: 0s;  animation-duration: 16s; }
+.cube:nth-child(2) { left: 22vw; animation-delay: 3s;  animation-duration: 22s; }
+.cube:nth-child(3) { left: 40vw; animation-delay: 7s;  animation-duration: 15s; }
+.cube:nth-child(4) { left: 58vw; animation-delay: 1.5s; animation-duration: 19s; }
+.cube:nth-child(5) { left: 74vw; animation-delay: 9s;  animation-duration: 17s; }
+.cube:nth-child(6) { left: 88vw; animation-delay: 4.5s; animation-duration: 13s; }
+
+/* Dark mode opacity adjustments */
+[data-theme="dark"] .cube {
+  opacity: 0.18;
+  border-color: var(--text);
+}
+[data-theme="dark"] .cube:nth-child(3n) {
+  border-color: var(--accent);
 }
 
-/* Dark Mode: slightly higher opacity for visible glow on black background */
-[data-theme="dark"] .orb {
-  mix-blend-mode: screen;
-}
-[data-theme="dark"] .orb-1 {
-  background: rgba(255, 230, 0, 0.05);
-}
-[data-theme="dark"] .orb-2 {
-  background: rgba(0, 162, 255, 0.03);
-}
-[data-theme="dark"] .orb-3 {
-  background: rgba(255, 230, 0, 0.03);
-}
-
-/* Organic drifting motions */
-@keyframes float-1 {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(12vw, 8vh) scale(1.15); }
-  100% { transform: translate(-6vw, 12vh) scale(0.9); }
-}
-
-@keyframes float-2 {
-  0% { transform: translate(0, 0) scale(0.95); }
-  50% { transform: translate(-15vw, -10vh) scale(1.1); }
-  100% { transform: translate(8vw, 6vh) scale(0.95); }
-}
-
-@keyframes float-3 {
-  0% { transform: translate(0, 0) scale(1.05); }
-  50% { transform: translate(10vw, -12vh) scale(0.85); }
-  100% { transform: translate(-8vw, 10vh) scale(1.12); }
-}
-
-/* Respect user's motion preferences by disabling drift entirely */
-@media (prefers-reduced-motion: reduce) {
-  .orb {
-    animation: none !important;
+/* Floating animation path with stepped rotation for retro look */
+@keyframes cube-float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
   }
+  8% {
+    opacity: 0.12;
+  }
+  90% {
+    opacity: 0.12;
+  }
+  100% {
+    transform: translateY(-112vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Disable animations for users with reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .cube {
+    animation: none !important;
+    bottom: unset;
+    opacity: 0.04;
+  }
+  .cube:nth-child(1) { left: 10vw; top: 15vh; }
+  .cube:nth-child(2) { left: 30vw; top: 45vh; }
+  .cube:nth-child(3) { left: 50vw; top: 25vh; }
+  .cube:nth-child(4) { left: 70vw; top: 60vh; }
+  .cube:nth-child(5) { left: 90vw; top: 10vh; }
 }
 
 /* ── 3. Layout ──────────────────────────────────────────────────── */
