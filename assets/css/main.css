@@ -98,12 +98,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   text-decoration: none;
 }
 .nav-logo-mark {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   flex-shrink: 0;
+  object-fit: contain;
+  /* PNG has black squares on white bg — invert in dark mode to get white on black */
+  transition: filter var(--speed);
 }
-/* In dark mode, swap the black squares to white */
-[data-theme="dark"] .nav-logo-mark .dark-sq { fill: #FFFFFF; }
+[data-theme="dark"] .nav-logo-mark {
+  filter: invert(1);
+}
 .nav-logo-wordmark {
   font-family: var(--font-head);
   font-weight: 700;
@@ -111,6 +115,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--text);
+}
+
+/* Footer logo img */
+.footer-logo-mark {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  /* Footer is always dark — invert to show white squares */
+  filter: invert(1);
 }
 
 /* Nav links */
