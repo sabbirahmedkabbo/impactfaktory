@@ -233,7 +233,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   height: 32px;
   flex-shrink: 0;
   object-fit: contain;
-  transition: width var(--speed) var(--ease), height var(--speed) var(--ease);
+  transition: width var(--speed) var(--ease), height var(--speed) var(--ease), transform var(--speed) var(--ease);
+}
+.nav-logo:hover .nav-logo-mark {
+  transform: scale(1.1); /* Logo hover zoom */
 }
 .site-header.scrolled .nav-logo-mark {
   width: 26px; /* Shrunk logo size */
@@ -760,7 +763,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   overflow: hidden;
   transition: transform var(--speed) var(--ease);
 }
-.team-card:hover { transform: translateY(-3px); }
+.team-card:hover { transform: translateY(-4px) scale(1.02); }
 .team-avatar {
   aspect-ratio: 1;
   background: var(--bg-subtle);
