@@ -76,12 +76,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* Light mode shifting gradient colors (subtle off-whites and brand gold-hints) */
 [data-theme="light"] .ambient-bg {
-  background: linear-gradient(-45deg, #FFFFFF, #FFFCF2, #FFFDF7, #FFF8E7);
+  background-image: linear-gradient(-45deg, #FFFFFF, #FFFCF2, #FFFDF7, #FFF8E7);
 }
 
 /* Dark mode shifting gradient colors (subtle deep blacks and dark brand amber/indigo hints) */
 [data-theme="dark"] .ambient-bg {
-  background: linear-gradient(-45deg, #0A0A0A, #12110c, #0b0c10, #0a0a0f);
+  background-image: linear-gradient(-45deg, #0A0A0A, #12110c, #0b0c10, #0a0a0f);
 }
 
 .cube {
@@ -520,7 +520,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   margin-right: -2px;
   margin-bottom: -2px;
   min-height: 360px;
-  transition: background var(--speed), color var(--speed);
+  transition: background var(--speed), color var(--speed), transform var(--speed) var(--ease);
   position: relative;
   overflow: hidden;
 }
@@ -536,7 +536,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   z-index: 0;
 }
 .card:hover::before { transform: scaleY(1); }
-.card:hover { color: #0A0A0A; }
+.card:hover { 
+  color: #0A0A0A; 
+  transform: scale(1.03); /* Zoom on hover */
+  z-index: 2; /* Render on top of grid lines */
+}
 .card:hover .card-num,
 .card:hover .card-title,
 .card:hover .card-body,
