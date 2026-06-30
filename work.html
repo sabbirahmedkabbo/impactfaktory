@@ -10,59 +10,64 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/main.css" />
-  <script>
-    (function(){var s=localStorage.getItem('if-theme'),d=window.matchMedia('(prefers-color-scheme: dark)').matches;
-    document.documentElement.setAttribute('data-theme',(s?s==='dark':d)?'dark':'light');})();
-  </script>
+  <script>(function(){var s=localStorage.getItem('if-theme'),d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',(s?s==='dark':d)?'dark':'light');})();</script>
 </head>
 <body>
-  <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
   <header class="site-header">
     <nav class="nav-inner" role="navigation" aria-label="Primary navigation">
-      <a href="index.html" class="nav-logo"><svg id="wordmark" viewBox="0 0 304 18" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges"></svg></a>
+      <a href="index.html" class="nav-logo" aria-label="Impact Faktory — Home">
+        <svg class="nav-logo-mark" viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" aria-hidden="true">
+          <rect x="0"  y="0"  width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="12" y="0"  width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="24" y="0"  width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="36" y="0"  width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="48" y="0"  width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="60" y="0"  width="10" height="10" class="dark-sq" fill="#0A0A0A"/>
+          <rect x="0"  y="12" width="10" height="10" fill="#FFE600"/><rect x="12" y="12" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="24" y="12" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="36" y="12" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="48" y="12" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="60" y="12" width="10" height="10" class="dark-sq" fill="#0A0A0A"/>
+          <rect x="0"  y="24" width="10" height="10" fill="#FFE600"/><rect x="12" y="24" width="10" height="10" fill="#FFE600"/><rect x="24" y="24" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="36" y="24" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="48" y="24" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="60" y="24" width="10" height="10" class="dark-sq" fill="#0A0A0A"/>
+          <rect x="0"  y="36" width="10" height="10" fill="#FFE600"/><rect x="12" y="36" width="10" height="10" fill="#FFE600"/><rect x="24" y="36" width="10" height="10" fill="#FFE600"/><rect x="36" y="36" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="48" y="36" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="60" y="36" width="10" height="10" class="dark-sq" fill="#0A0A0A"/>
+          <rect x="0"  y="48" width="10" height="10" fill="#FFE600"/><rect x="12" y="48" width="10" height="10" fill="#FFE600"/><rect x="24" y="48" width="10" height="10" fill="#FFE600"/><rect x="36" y="48" width="10" height="10" fill="#FFE600"/><rect x="48" y="48" width="10" height="10" class="dark-sq" fill="#0A0A0A"/><rect x="60" y="48" width="10" height="10" class="dark-sq" fill="#0A0A0A"/>
+          <rect x="0"  y="60" width="10" height="10" fill="#FFE600"/><rect x="12" y="60" width="10" height="10" fill="#FFE600"/><rect x="24" y="60" width="10" height="10" fill="#FFE600"/><rect x="36" y="60" width="10" height="10" fill="#FFE600"/><rect x="48" y="60" width="10" height="10" fill="#FFE600"/><rect x="60" y="60" width="10" height="10" class="dark-sq" fill="#0A0A0A"/>
+        </svg>
+        <span class="nav-logo-wordmark">Impact Faktory</span>
+      </a>
       <ul class="nav-links" role="list">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="index.html"    class="nav-link">Home</a></li>
+        <li><a href="about.html"    class="nav-link">About</a></li>
         <li><a href="services.html" class="nav-link">Services</a></li>
-        <li><a href="work.html" class="nav-link active">Work</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="work.html"     class="nav-link active">Work</a></li>
+        <li><a href="contact.html"  class="nav-link">Contact</a></li>
       </ul>
-      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode"><span class="toggle-track" aria-hidden="true"><span class="toggle-thumb"></span></span></button>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode" aria-pressed="false"><span class="toggle-track" aria-hidden="true"><span class="toggle-thumb"></span></span></button>
       <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </nav>
     <div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Mobile navigation">
       <ul role="list">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="index.html"    class="nav-link">Home</a></li>
+        <li><a href="about.html"    class="nav-link">About</a></li>
         <li><a href="services.html" class="nav-link">Services</a></li>
-        <li><a href="work.html" class="nav-link">Work</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="work.html"     class="nav-link">Work</a></li>
+        <li><a href="contact.html"  class="nav-link">Contact</a></li>
       </ul>
     </div>
   </header>
 
   <main id="main-content">
+
     <div class="page-banner">
       <div class="container">
         <p class="page-banner-label">Impact Faktory / Work</p>
-        <h1 class="page-banner-title">Selected<br><span class="yellow-underline">Case Studies</span></h1>
+        <h1 class="page-banner-title">Selected<br>Case Studies</h1>
       </div>
     </div>
 
     <section class="section">
       <div class="container">
 
-        <!-- Filter Bar -->
         <div class="filter-bar" role="group" aria-label="Filter work by category">
-          <button class="filter-btn active" data-filter="all" id="filter-all">All</button>
-          <button class="filter-btn" data-filter="marketing" id="filter-marketing">Marketing</button>
-          <button class="filter-btn" data-filter="events" id="filter-events">Events</button>
-          <button class="filter-btn" data-filter="identity" id="filter-identity">Identity</button>
-          <button class="filter-btn" data-filter="perception" id="filter-perception">Perception</button>
+          <button class="filter-btn active" data-filter="all"        id="filter-all">All</button>
+          <button class="filter-btn"        data-filter="marketing"  id="filter-marketing">Marketing</button>
+          <button class="filter-btn"        data-filter="events"     id="filter-events">Events</button>
+          <button class="filter-btn"        data-filter="identity"   id="filter-identity">Identity</button>
+          <button class="filter-btn"        data-filter="perception" id="filter-perception">Perception</button>
         </div>
 
-        <!-- Case Studies -->
         <div class="work-list">
 
           <article class="case-card" data-category="marketing" id="case-nexon">
@@ -84,11 +89,7 @@
               </div>
               <div class="case-col">
                 <h3 class="case-col-title">Result</h3>
-                <p class="case-result-text">
-                  +340% brand search volume in 6 weeks.<br>
-                  2.7M social impressions at launch.<br>
-                  Stocked in 1,200 new retail locations.
-                </p>
+                <p class="case-result-text">+340% brand search volume in 6 weeks.<br>2.7M social impressions at launch.<br>Stocked in 1,200 new retail locations.</p>
               </div>
             </div>
           </article>
@@ -112,11 +113,7 @@
               </div>
               <div class="case-col">
                 <h3 class="case-col-title">Result</h3>
-                <p class="case-result-text">
-                  +68% ticket sales YoY.<br>
-                  4.1M impressions from festival UGC.<br>
-                  Covered by 14 editorial outlets.
-                </p>
+                <p class="case-result-text">+68% ticket sales YoY.<br>4.1M impressions from festival UGC.<br>Covered by 14 editorial outlets.</p>
               </div>
             </div>
           </article>
@@ -132,7 +129,7 @@
             <div class="case-body">
               <div class="case-col">
                 <h3 class="case-col-title">Challenge</h3>
-                <p class="case-col-text">A fintech startup with strong fundamentals was indistinguishable visually from a hundred competitors. Series A was stalling because investors didn't believe the brand.</p>
+                <p class="case-col-text">A fintech startup with strong fundamentals was indistinguishable from a hundred competitors. Series A was stalling because investors didn't believe the brand.</p>
               </div>
               <div class="case-col">
                 <h3 class="case-col-title">Solution</h3>
@@ -140,11 +137,7 @@
               </div>
               <div class="case-col">
                 <h3 class="case-col-title">Result</h3>
-                <p class="case-result-text">
-                  Series A closed 3 weeks post-rebrand.<br>
-                  +190% pitch-to-meeting conversion.<br>
-                  Brand used as case study at two fintech conferences.
-                </p>
+                <p class="case-result-text">Series A closed 3 weeks post-rebrand.<br>+190% pitch-to-meeting conversion.<br>Used as case study at two fintech conferences.</p>
               </div>
             </div>
           </article>
@@ -160,7 +153,7 @@
             <div class="case-body">
               <div class="case-col">
                 <h3 class="case-col-title">Challenge</h3>
-                <p class="case-col-text">A regional contractor faced a PR crisis after a disputed project attracted negative media coverage. New business pipeline had dropped 45% in one quarter.</p>
+                <p class="case-col-text">A regional contractor faced a PR crisis after a disputed project attracted negative media coverage. New business pipeline dropped 45% in one quarter.</p>
               </div>
               <div class="case-col">
                 <h3 class="case-col-title">Solution</h3>
@@ -168,11 +161,7 @@
               </div>
               <div class="case-col">
                 <h3 class="case-col-title">Result</h3>
-                <p class="case-result-text">
-                  Pipeline recovered to 115% of pre-crisis levels.<br>
-                  Net Promoter Score +34 points.<br>
-                  Three unsolicited award nominations.
-                </p>
+                <p class="case-result-text">Pipeline recovered to 115% of pre-crisis levels.<br>Net Promoter Score +34 points.<br>Three unsolicited award nominations.</p>
               </div>
             </div>
           </article>
@@ -184,18 +173,26 @@
 
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <a href="index.html" class="footer-logo"><svg id="footer-wordmark" viewBox="0 0 304 18" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges"></svg></a>
+      <a href="index.html" class="footer-logo" aria-label="Impact Faktory">
+        <svg class="footer-logo-mark" viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" aria-hidden="true">
+          <rect x="0"  y="0"  width="10" height="10" fill="#FFFFFF"/><rect x="12" y="0"  width="10" height="10" fill="#FFFFFF"/><rect x="24" y="0"  width="10" height="10" fill="#FFFFFF"/><rect x="36" y="0"  width="10" height="10" fill="#FFFFFF"/><rect x="48" y="0"  width="10" height="10" fill="#FFFFFF"/><rect x="60" y="0"  width="10" height="10" fill="#FFFFFF"/>
+          <rect x="0"  y="12" width="10" height="10" fill="#FFE600"/><rect x="12" y="12" width="10" height="10" fill="#FFFFFF"/><rect x="24" y="12" width="10" height="10" fill="#FFFFFF"/><rect x="36" y="12" width="10" height="10" fill="#FFFFFF"/><rect x="48" y="12" width="10" height="10" fill="#FFFFFF"/><rect x="60" y="12" width="10" height="10" fill="#FFFFFF"/>
+          <rect x="0"  y="24" width="10" height="10" fill="#FFE600"/><rect x="12" y="24" width="10" height="10" fill="#FFE600"/><rect x="24" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="36" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="48" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="60" y="24" width="10" height="10" fill="#FFFFFF"/>
+          <rect x="0"  y="36" width="10" height="10" fill="#FFE600"/><rect x="12" y="36" width="10" height="10" fill="#FFE600"/><rect x="24" y="36" width="10" height="10" fill="#FFE600"/><rect x="36" y="36" width="10" height="10" fill="#FFFFFF"/><rect x="48" y="36" width="10" height="10" fill="#FFFFFF"/><rect x="60" y="36" width="10" height="10" fill="#FFFFFF"/>
+          <rect x="0"  y="48" width="10" height="10" fill="#FFE600"/><rect x="12" y="48" width="10" height="10" fill="#FFE600"/><rect x="24" y="48" width="10" height="10" fill="#FFE600"/><rect x="36" y="48" width="10" height="10" fill="#FFE600"/><rect x="48" y="48" width="10" height="10" fill="#FFFFFF"/><rect x="60" y="48" width="10" height="10" fill="#FFFFFF"/>
+          <rect x="0"  y="60" width="10" height="10" fill="#FFE600"/><rect x="12" y="60" width="10" height="10" fill="#FFE600"/><rect x="24" y="60" width="10" height="10" fill="#FFE600"/><rect x="36" y="60" width="10" height="10" fill="#FFE600"/><rect x="48" y="60" width="10" height="10" fill="#FFE600"/><rect x="60" y="60" width="10" height="10" fill="#FFFFFF"/>
+        </svg>
+        <span class="footer-logo-wordmark">Impact Faktory</span>
+      </a>
       <p class="footer-copy">© <span id="year"></span> Impact Faktory. All rights reserved.</p>
       <ul class="footer-links" role="list">
         <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a></li>
-        <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LI</a></li>
-        <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">X</a></li>
+        <li><a href="https://linkedin.com"  target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LI</a></li>
+        <li><a href="https://twitter.com"   target="_blank" rel="noopener noreferrer" aria-label="X">X</a></li>
       </ul>
     </div>
   </footer>
 
-  <script src="assets/js/logo.js"></script>
-  <script src="assets/js/bg.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
