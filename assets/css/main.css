@@ -154,6 +154,19 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   }
 }
 
+/* Shifting background gradient keyframes */
+@keyframes bg-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 /* Disable animations for users with reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
   .cube {
