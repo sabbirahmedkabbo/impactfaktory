@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initWorkFilter();
   initContactForm();
   initScrollReveal();
+  initHeaderScroll();
 });
 
 /* ── Theme ──────────────────────────────────────────────────────── */
@@ -162,4 +163,21 @@ function initScrollReveal() {
     el.style.transition = 'opacity .5s ease, transform .5s ease';
     observer.observe(el);
   });
+}
+
+/* ── Header Scroll Animation ────────────────────────────────────── */
+function initHeaderScroll() {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+
+  function checkScroll() {
+    if (window.scrollY > 40) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  }
+
+  checkScroll();
+  window.addEventListener('scroll', checkScroll, { passive: true });
 }
