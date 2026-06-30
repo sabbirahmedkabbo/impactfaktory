@@ -84,7 +84,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   transform-origin: center;
   will-change: transform, opacity;
   /* Use steps(60) to achieve a retro, low-framerate pixelated movement */
-  animation: cube-float 15s infinite linear steps(60);
+  animation: cube-float 15s infinite steps(60);
 }
 
 /* Vary border colors, sizes, and backgrounds */
